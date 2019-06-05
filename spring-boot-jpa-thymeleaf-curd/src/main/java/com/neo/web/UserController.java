@@ -10,17 +10,17 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
+@RequestMapping(path = "/user")
 public class UserController {
 
     @Resource
     UserService userService;
 
 
-    @RequestMapping("/")
-    public String index() {
-        return "redirect:/list";
-    }
-
+   
+    
+    
+    
     @RequestMapping("/list")
     public String list(Model model) {
         List<User> users=userService.getUserList();
@@ -58,4 +58,13 @@ public class UserController {
         userService.delete(id);
         return "redirect:/list";
     }
+    
+    @RequestMapping("/sendEmail")
+    public String sendEmail() {
+    	
+    	return "email/emailTemplate";
+    }
+    
+    
+    
 }

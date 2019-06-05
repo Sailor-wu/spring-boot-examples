@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>userList</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container" style="padding-left: 20%; padding-right: 20%">
+	<br />
+	<h1>Sign In</h1>
+	<br />
+	<br />
+	<form class="form-horizontal" th:action="@{/login}" method="post">
+		<div class="with:40%">
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">用户名</span> <input
+					type="text" id="username" name="userName" class="username form-control"
+					style="width: 40%" placeholder="you name first word!"
+					maxlength="50" aria-describedby="basic-addon1">
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">密　码</span> <input
+					type="text" id="password" name="password" class="password form-control"
+					style="width: 40%" placeholder="password"
+					aria-describedby="basic-addon1" maxlength="50">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-2 control-label">
+				<button type="submit" class="btn btn-info">Submit</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
