@@ -1,8 +1,8 @@
-package com.neo.service.impl;
+package com.dce.service.impl;
 
-import com.neo.model.User;
-import com.neo.repository.UserRepository;
-import com.neo.service.UserService;
+import com.dce.model.User;
+import com.dce.repository.UserRepository;
+import com.dce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

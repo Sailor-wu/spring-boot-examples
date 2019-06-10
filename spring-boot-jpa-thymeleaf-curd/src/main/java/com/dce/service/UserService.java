@@ -1,6 +1,6 @@
-package com.neo.service;
+package com.dce.service;
 
-import com.neo.model.User;
+import com.dce.model.User;
 
 import java.util.List;
 

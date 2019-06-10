@@ -1,0 +1,23 @@
+spring.datasource.url=jdbc:mysql://39.108.14.167:3306/mydatebase?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+spring.datasource.username=root
+spring.datasource.password=why@123
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+##根据实体注解empty自动创建表   create 创建   update 存在修改，不存在创建
+spring.jpa.properties.hibernate.hbm2ddl.auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.show-sql= true
+
+spring.thymeleaf.cache=false
+
+#服务器端口名字
+server.port=8081
+
+
+spring.mail.host=smtp.qq.com
+spring.mail.username=2856346101@qq.com
+spring.mail.password=qveguyrfimylddeb
+#spring.mail.password=Wuhaiyuan@55
+spring.mail.default-encoding=UTF-8
+
+mail.fromMail.addr=2856346101@qq.com

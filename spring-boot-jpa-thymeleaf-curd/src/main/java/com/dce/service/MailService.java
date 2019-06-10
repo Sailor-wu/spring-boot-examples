@@ -1,6 +1,6 @@
-package com.neo.service;
+package com.dce.service;
 
-import com.neo.model.Mail;
+import com.dce.model.Mail;
 
 /**
  * 
@@ -11,6 +11,7 @@ public interface MailService {
 
 	public void sendSimpleMail(Mail mail);
 
+	public  void sendEmailSSL(Mail mail);
 //    public void sendHtmlMail(String to, String subject, String content);
 //
 //    public void sendAttachmentsMail(String to, String subject, String content, String filePath);

@@ -1,12 +1,21 @@
-package com.neo.web;
+package com.dce.web;
 
-import com.neo.model.User;
-import com.neo.service.UserService;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
+import com.dce.model.Location;
+import com.dce.model.User;
+import com.dce.service.LocationService;
+import com.dce.service.UserService;
+import com.dce.util.JsonUtil;
+import com.dce.util.UtilTool;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -16,13 +25,18 @@ public class UserController {
     @Resource
     UserService userService;
 
+    @Resource
+    LocationService locationService;
 
-   
-    
-    
     
     @RequestMapping("/list")
-    public String list(Model model) {
+    public String list(Model model) throws JSONException, IOException {
+    	JSONObject addrJson = UtilTool.getAddrName();
+    	if(addrJson.get("status") == null) {    		
+    		Location location = JsonUtil.jsonToObj(addrJson.toJSONString(), Location.class);
+    		locationService.save(location);
+    		model.addAttribute("location", location);
+    	}
         List<User> users=userService.getUserList();
         model.addAttribute("users", users);
         return "user/list";

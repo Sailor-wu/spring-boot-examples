@@ -1,9 +1,9 @@
-package com.neo.web;
+package com.dce.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.neo.model.User;
+import com.dce.model.User;
 
 @Controller
 public class LoginController {
