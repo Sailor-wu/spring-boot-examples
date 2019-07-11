@@ -50,7 +50,7 @@ public class UserController {
     @RequestMapping("/add")
     public String add(User user) {
         userService.save(user);
-        return "redirect:/list";
+        return "redirect:list";
     }
 
     @RequestMapping("/toEdit")
@@ -63,22 +63,26 @@ public class UserController {
     @RequestMapping("/edit")
     public String edit(User user) {
         userService.edit(user);
-        return "redirect:/list";
+        return "redirect:list";
     }
 
 
     @RequestMapping("/delete")
     public String delete(Long id) {
         userService.delete(id);
-        return "redirect:/list";
+        return "redirect:list";
     }
     
     @RequestMapping("/sendEmail")
     public String sendEmail() {
     	
     	return "email/emailTemplate";
+    }//
+    
+    @RequestMapping("/playgame")
+    public String playgame() {
+    	
+    	return "user/game";
     }
-    
-    
     
 }

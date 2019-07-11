@@ -1,5 +1,6 @@
 package com.dce.service.impl;
 
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -157,11 +158,16 @@ public class MailServiceImpl implements MailService {
             message.setText(mail.getContent());
 
             Transport.send(message);
+            mailRepository.save(mail);
             System.out.println("Done");
-
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+	}
+
+	@Override
+	public List<Mail> getMailList() {
+		return  mailRepository.findAll();
 	}
 	
 	
